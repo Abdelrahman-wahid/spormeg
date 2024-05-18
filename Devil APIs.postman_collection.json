@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "2e62b696-d9d4-4101-817b-5efc46cb8817",
+		"name": "Devil APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19682581"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Ahmed",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Code",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "code87@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "01098292993",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "parent",
+							"description": "child / parent",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "c_password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Validation Errors",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Feb 2024 12:42:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Feb 2024 12:42:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": {\n        \"first_name\": [\n            \"The first name field is required.\"\n        ],\n        \"last_name\": [\n            \"The last name field is required.\"\n        ],\n        \"email\": [\n            \"The email field is required.\"\n        ],\n        \"mobile\": [\n            \"The mobile field is required.\"\n        ],\n        \"type\": [\n            \"The type field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ],\n        \"c_password\": [\n            \"The c password field is required.\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "code5@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmMwOTk3NzNhYmQ4ZTM1MWRiODU0ODVlNTJjODg3NzJiODEwMzc5MjdlNjJjMjMxZWM3YzU1YjFhYjRkOWUwNTM3NmZhMDE5MWM1Mjk4MjgiLCJpYXQiOjE3MDc1Njk1NzQuNzcyMjg3LCJuYmYiOjE3MDc1Njk1NzQuNzcyMjg5LCJleHAiOjE3MzkxOTE5NzQuNzY4NjAyLCJzdWIiOiI1Iiwic2NvcGVzIjpbXX0.JakqMK3UjEs8qVVXknNLmjDuXN5mRHesgck9gwEoY8kd0hDce0tzzXDoQXfu0vyjD00ch3a4QQibHylqoYsjsvXNfNXxZ0tMAd88xcmjhlJCcA81MRJz1F7tLBvIiP3elFDPzR7U5gs5Gt_mk-nY5er8gZGKo9gTHbTkDvxSpkl5RTVbf1BiaIjwHhNuHpg9Vs-Jw4n2xeHBrdJr6vBHm2yG-DdHxMC1XEu4jbAEpz4QIEEpP_HOUFPUfsLe4Qd9JUy53W07eNCIAAU2_kvvABSSgg5-cNZYsTuo5NszbQQoR-NSF1ytgubpLfhosNwk_PisgqAdUhjU3uBlauCZiIhb2m-K2oHZZLU4brY8u1q1txO5qcVC3Q2qtp7KeLEuRhp3F3QxWjujvjpTeO4IKJQVg9UG13gA2KvappOuEIMGICL58NDt3tjPSKqJBZgEjCBSGymKVo_5RJxKoagcxJGLmTEgP81tGHknNVEMw7KNsbp6Leg0vMTQfGQYaGlgIOv1JLp8RW9wuRW33pxUP_6nFMi2V44OObgXIqqxhsu51IXIS1aSpO8--ilz-ykx7QM7p3el2cc1eoyTvOi35liZjWh0dL2gopExjmyrahlg3CipKI4bwR3D8kXTQqXIwo8wND1xrwczm8NHIaQ9TcOvW9ypbUWx8PLhZ0lLWic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user-detail",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user-detail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
